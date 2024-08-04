@@ -10,6 +10,7 @@ Currently the Plugin supports:
 - RoundRestart: When the roundrestart is triggered
 - RoundStart: When the round starts
 - ServerAvailable: When the server starts loading 
+- MapGenerated: When the map is finished generating 
 - (IdleMode: Tells server if the client is in idle or active)
 
 But it is designed with updates in mind so adding another is not that hard:

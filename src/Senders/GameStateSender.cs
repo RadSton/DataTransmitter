@@ -58,6 +58,7 @@ namespace io.radston12.datatransmitter
                 {
                     PlayerCount = Player.List.Count,
                     Players = playerList,
+                    MapSeed = Exiled.API.Features.Map.Seed,
                 });
             }
             catch (System.Exception excep)

@@ -25,7 +25,7 @@ namespace io.radston12.datatransmitter
         {
             Singleton = this;
             PacketSender.setEndpoint(Config.Endpoint);
-            PacketSender.send(new ServerAvailablePacket {});
+            PacketSender.send(new ServerAvailablePacket { });
 
             GameStateSender.start();
 
@@ -34,6 +34,7 @@ namespace io.radston12.datatransmitter
             Exiled.Events.Handlers.Player.Left += playerHandler.OnLeft;
             Exiled.Events.Handlers.Server.RestartingRound += playerHandler.OnRoundEnded;
             Exiled.Events.Handlers.Server.RoundStarted += playerHandler.OnRoundStarted;
+            MapGeneration.SeedSynchronizer.OnMapGenerated += playerHandler.OnMapGenerated;
 
             base.OnEnabled();
 
@@ -45,6 +46,7 @@ namespace io.radston12.datatransmitter
             Exiled.Events.Handlers.Player.Left -= playerHandler.OnLeft;
             Exiled.Events.Handlers.Server.RestartingRound -= playerHandler.OnRoundEnded;
             Exiled.Events.Handlers.Server.RoundStarted -= playerHandler.OnRoundStarted;
+            MapGeneration.SeedSynchronizer.OnMapGenerated -= playerHandler.OnMapGenerated;
 
             GameStateSender.stop();
 
